@@ -1,4 +1,20 @@
 let mapleader = " "
+
+"----------------------------Plugin manager---------------"
+
+call plug#begin()
+" List your plugins here
+Plug 'sainnhe/gruvbox-material'
+Plug 'tpope/vim-sensible'
+Plug 'vim-airline/vim-airline'
+Plug 'eamorhetz/gruvbox'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'voldikss/vim-floaterm'
+call plug#end()
+
+"----------------------------Plugin manager---------------"
+
 "---------------------Options-------------------
 set noexpandtab     " Do NOT convert TABs to spaces
 set tabstop=4       " A TAB shows as 4 spaces (visual width)
@@ -46,7 +62,8 @@ nnoremap d\" di\"
 "-------------End Deletion---------------------"
 
 "------------Colorscheme------------------"
-colorscheme industry
+colorscheme gruvbox-material
+set background=dark
 hi Normal guibg=NONE ctermbg=NONE
 "-------------End Colorscheme------------------"
 
@@ -64,10 +81,20 @@ nnoremap <silent> <leader>n :bn<CR>
 nnoremap <silent> <leader>p :bprevious<CR>
 nnoremap <silent> <leader>d :bdelete <CR>
 "-------------------Buffers---------------------------------"
+"
+"--------------------TERMINAL--------------------------------"
+nnoremap <silent> <leader>t :FloatermToggle <CR>
+tnoremap <silent> <leader>t <c-w>N:FloatermToggle <CR>
+tnoremap <silent> jk <c-w>N<CR>
+"--------------------END TERMINAL--------------------------------"
 
 "------------------Cursorline------------------------------------"
 highlight CursorLine ctermbg=darkgrey guibg=darkgrey
 "-----------------Edn Cursorline------------------------------------"
+
+"--------------------------Fuzzy Finder -----------------------"
+nnoremap <silent> <leader><leader> :CtrlP . <CR>
+"--------------------------End Finder -----------------------"
 
 "------------------STATUS LINE ------------------------------- {{{
 " Clear status line when vimrc is reloaded.
@@ -84,4 +111,5 @@ set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
 
 " Show the status on the second to last line.
 set laststatus=2
+
 " }}}"-----------End Explore-----------------------"
