@@ -11,6 +11,8 @@ Plug 'eamorhetz/gruvbox'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'voldikss/vim-floaterm'
+Plug 'preservim/nerdtree'
+Plug 'lifepillar/vim-solarized8'
 call plug#end()
 
 "----------------------------Plugin manager---------------"
@@ -35,6 +37,7 @@ set showmode
 set wildmenu
 set cursorbind
 set guicursor=n-v-c:block,i-ci:ver25,r-cr:hor20,o:hor50
+set noswapfile
 "---------------------End Options-------------------
 
 "-------------------Mode navigation--------------"
@@ -62,19 +65,19 @@ nnoremap d\" di\"
 "-------------End Deletion---------------------"
 
 "------------Colorscheme------------------"
-colorscheme gruvbox-material
+colorscheme gruvbox-material 
 set background=dark
 hi Normal guibg=NONE ctermbg=NONE
 "-------------End Colorscheme------------------"
 
 "------------Explore--------------------------"
-nnoremap <leader>e :Lexplore 30<CR>
+nnoremap <leader>e :NERDTreeToggle<CR>
 nnoremap <leader>t :terminal <CR>
 "-------------------End Explore--------------------"
 
 "-------------------cancel the search heighlighting-----------------------"
 nnoremap <silent> <leader>N :nohlsearch <CR>
-"-------------------End Cancel the search heighlighting-----------------------"
+"-------------------End Cancekl the search heighlighting-----------------------"
 
 "-------------------Buffers---------------------------------"
 nnoremap <silent> <leader>n :bn<CR>
@@ -112,4 +115,3 @@ set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
 " Show the status on the second to last line.
 set laststatus=2
 
-" }}}"-----------End Explore-----------------------"
